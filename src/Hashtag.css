@@ -1,0 +1,13 @@
+#hashbar ul li
+{
+	transition: .5s;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+
+#hashbar ul li:hover
+{
+	text-decoration: underline;
+	transform: scale(1.1);
+	color: rgb(0,172,238);
+}
