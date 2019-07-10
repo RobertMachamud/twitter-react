@@ -5,7 +5,7 @@ import Hashtag from './Hashtag'
 class Hashtags extends Component {
 	// Data
 	state = {
-
+			hashtags: []
 	}
 	// Functions
 
@@ -13,10 +13,14 @@ class Hashtags extends Component {
 	// Render
 	render() {
 		return (
-			<div class="col-3" id="hashbar">
-				<ul class="list-unstyled">
+			<div className="col-3" id="hashbar">
+				<ul className="list-unstyled">
 					<h2>Tweets</h2>
-					<Hashtag />
+					{
+						this.state.hashtags.map( (h) => {
+							return <Hashtag />
+						})
+					}
 				</ul>
 			</div>
 		)

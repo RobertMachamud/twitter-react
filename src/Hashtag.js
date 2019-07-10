@@ -4,7 +4,7 @@ import './Hashtag.css'
 class Hashtag extends Component {
 	// Data
 	state = {
-
+			hashtag: "codingfun"
 	}
 	// Functions
 
@@ -12,7 +12,7 @@ class Hashtag extends Component {
 	// Render
 	render() {
 		return (
-				<li class="hash">#fun</li>
+				<li className="hash">#{this.state.hashtag}</li>
 		)
 	}
 }

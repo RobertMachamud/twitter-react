@@ -7,7 +7,7 @@ import './Content.css'
 class Content extends Component {
 	// Data
 	state = {
-
+			messages: []
 	}
 	// Functions
 
@@ -15,7 +15,7 @@ class Content extends Component {
 	// Render
 	render() {
 		return (
-			<div class="container">
+			<div className="container">
 				<div className="row" id="main">
 						<UserInfo />
 						<Messages />
