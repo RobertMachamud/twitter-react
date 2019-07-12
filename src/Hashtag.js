@@ -10,7 +10,7 @@ class Hashtag extends Component {
 
 	// Functions
 	componentWillMount() {
-		console.log(this.props)
+		// console.log(this.props)
 	}
 
 

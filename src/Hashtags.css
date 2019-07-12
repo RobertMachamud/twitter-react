@@ -5,4 +5,10 @@
 	background: #fafafa;
 	border-radius: 5px;
 	height: 400px;
+	padding: 10px;
+}
+
+#hashbar h2
+{
+	margin-bottom: 30px;
 }

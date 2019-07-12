@@ -9,29 +9,20 @@ class Hashtags extends Component {
 		hashtags: []
 	}
 
-	getHashtags = () => {
-		return new Promise(function(resolve, reject) {
-			axios.get('http://localhost:4000/api/hashtags').then( (res) => {
-				console.log('res.data', res.data)
-				resolve(res.data)
-			}).catch( (err) => {
-				reject(err)
-			})
-		})
-	}
-
-	componentWillMount() {
-		this.getHashtags().then((data) => {
-			console.log('data', data)
+	componentDidMount() {
+		axios.get('http://localhost:4000/api/hashtags').then( (res) => {
+			res.data[0].active = true
 			this.setState({
-				hashtags: data
-			}, console.log('this.state', this.state))
-		}).catch((err) => {
-			console.log('err', err)
+				hashtags: res.data
+			})
+			this.selectHashtag(res.data[0]._id)
+			console.log('res.data[0]', res.data[0])
+		}).catch( (err) => {
+			console.log(err)
 		})
 	}
 
-	// Functions
+
 	selectHashtag = (id) => {
 		let hashtags = this.state.hashtags
 		hashtags.forEach( (h) => delete h.active)
@@ -41,11 +32,12 @@ class Hashtags extends Component {
 		this.props.getMessages(id)
 	}
 
+
 	// Render
 	render() {
 		return (
 			<div className="col-3" id="hashbar">
-				<h2>Tweets</h2>
+				<h2>Hashtags</h2>
 				<ul className="list-unstyled">
 					{
 						this.state.hashtags.map( (h) => {

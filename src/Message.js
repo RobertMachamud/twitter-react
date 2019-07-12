@@ -11,7 +11,7 @@ class Message extends Component {
 	// Functions
 	componentWillMount() {
 		let message = this.state.message
-		console.log('message:', message)
+		console.log('message:!!!!!!!!!', message)
 
 		message.date = moment(message.date).format('D MMM - h:mma')
 		this.setState({message})

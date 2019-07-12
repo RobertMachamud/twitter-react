@@ -12,7 +12,7 @@
 	color: rgb(0,172,238);
 }
 
-.active_hash
+.active
 {
 	text-decoration: underline;
 	transform: scale(1.1);

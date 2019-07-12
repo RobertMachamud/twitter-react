@@ -19,7 +19,7 @@ class Messages extends Component {
 				messages: res.data
 			})
 		}).catch( (err) => {
-			console.log('err', err);
+			console.log('err', err)
 		})
 	}
 
@@ -34,11 +34,11 @@ class Messages extends Component {
 	}
 
 
-	 createMessage = (e, text, hashtag) => {
+	 createMessage = (e, text, hash) => {
 		 	e.preventDefault()
 			let message = {
 				body: text,
-				hashtag: hashtag
+				hashtag: hash
 			}
 			axios.post(
 				'http://localhost:4000/api/messages',
@@ -48,6 +48,7 @@ class Messages extends Component {
 				}}
 			).then( (res) => {
 				let messages = this.state.messages
+				console.log('MEEEEMEEEEMEEE',messages);
 				messages.push(res.data)
 				this.setState({messages})
 			}).catch( (err) => {
@@ -60,7 +61,7 @@ class Messages extends Component {
 	render() {
 		return (
 			<div className="col-6" id="messages">
-				<NewMessage createMessage={this.props.createMessage} hashtag={this.props.hashtag} />
+				<NewMessage createMessage={this.createMessage} hashtag={this.props.hashtag} />
 				{
 					this.state.messages.map( (m) => {
 						return <Message message={m} key={m._id} />

@@ -18,8 +18,8 @@ class Content extends Component {
 			<div className="container">
 				<div className="row" id="main">
 						<UserInfo />
-						<Messages getMessages={this.props.getMessages} hashtag={this.props.hashtag} />
-						<Hashtags />
+						<Messages hashtag={this.props.hashtag} />
+						<Hashtags getMessages={this.props.getMessages} />
 				</div>
 			</div>
 
