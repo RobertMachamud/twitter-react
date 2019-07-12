@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import Header from'./Header'
@@ -6,14 +6,30 @@ import Content from './Content'
 import '@fortawesome/fontawesome-free/css/all.css'
 
 
-function App() {
-  return (
-    <div id="cont">
+class App extends Component {
+  // Data
+  state = {
+    hashtag: ''
+  }
 
-        <Header />
-        <Content />
-    </div>
-  )
+
+  // Functions
+  getMessages = (id) => {
+    this.setState({
+      hashtag: id
+    })
+  }
+
+
+  // Render
+  render() {
+    return (
+      <div id="cont">
+          <Header />
+          <Content getMessages={this.getMessages} hashtag={this.state.hashtag} />
+      </div>
+    )
+  }
 }
 
 export default App;

@@ -7,7 +7,7 @@ import './Content.css'
 class Content extends Component {
 	// Data
 	state = {
-			messages: []
+			// messages: []
 	}
 	// Functions
 
@@ -18,7 +18,7 @@ class Content extends Component {
 			<div className="container">
 				<div className="row" id="main">
 						<UserInfo />
-						<Messages />
+						<Messages getMessages={this.props.getMessages} hashtag={this.props.hashtag} />
 						<Hashtags />
 				</div>
 			</div>

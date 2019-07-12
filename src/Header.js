@@ -19,7 +19,7 @@ class Header extends Component {
 					<div className="nav_bar">
 						<nav>
 							<ul className="list-unstyled">
-								<li><i className="fas fa-home"></i>Home</li>
+								<li><a href=""><i className="fas fa-home"></i>Home</a></li>
 								<li><i className="far fa-bell"></i>Notification</li>
 								<li><i className="far fa-envelope"></i>Messages</li>
 							</ul>

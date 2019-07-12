@@ -4,15 +4,22 @@ import './Hashtag.css'
 class Hashtag extends Component {
 	// Data
 	state = {
-			hashtag: "codingfun"
+			hashtag: this.props.hashtag
 	}
+
+
 	// Functions
+	componentWillMount() {
+		console.log(this.props)
+	}
 
 
 	// Render
 	render() {
 		return (
-				<li className="hash">#{this.state.hashtag}</li>
+				<li className={this.state.hashtag.active ? 'active' : ''}
+					onClick={() => this.props.selectHashtag(this.state.hashtag._id)}>
+					#{this.state.hashtag.name}</li>
 		)
 	}
 }

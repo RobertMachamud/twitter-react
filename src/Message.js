@@ -1,13 +1,21 @@
 import React, {Component} from 'react'
 import './Message.css'
+import moment from 'moment'
 
 
 class Message extends Component {
 	// Data
 	state = {
-
+		message: this.props.message
 	}
 	// Functions
+	componentWillMount() {
+		let message = this.state.message
+		console.log('message:', message)
+
+		message.date = moment(message.date).format('D MMM - h:mma')
+		this.setState({message})
+	}
 
 
 	// Render
@@ -21,10 +29,10 @@ class Message extends Component {
 						</div>
 					</div>
 					<div className="col-9 d-flex flex-column pl-5">
-						<h5>Robert Machamud</h5>
-						<span className="time">9 - Jul 5:30</span>
-						<span className="hashtag">hashtag</span>
-						<p className="body">Hello World!</p>
+						<h5>{this.state.message.author.name}</h5>
+						<span className="time">{this.state.message.date}</span>
+						<span className="hashtag">{this.state.message.hashtag}</span>
+						<div className="body">{this.state.message.body}</div>
 					</div>
 				</div>
 			</div>

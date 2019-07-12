@@ -11,3 +11,10 @@
 	transform: scale(1.1);
 	color: rgb(0,172,238);
 }
+
+.active_hash
+{
+	text-decoration: underline;
+	transform: scale(1.1);
+	color: rgb(0,172,238);
+}

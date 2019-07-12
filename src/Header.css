@@ -139,6 +139,11 @@ header
 	border-bottom: solid 3px rgb(0,172,238);
 }
 
+.active_channel
+{
+	border-bottom: solid 3px rgb(0,172,238);
+}
+
 
 .follow_btn
 {

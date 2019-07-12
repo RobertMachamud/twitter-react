@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './Signup.css'
 import '@fortawesome/fontawesome-free/css/all.css'
+import axios from 'axios'
 
 
 
@@ -28,7 +29,12 @@ class Signup extends Component {
 
   signup = (e) => {
     e.preventDefault()
-    
+    axios.post('http://localhost:4000/api/signup', this.state).then( (res) => {
+      localStorage.setItem('token', res.data.token)
+      this.props.auth()
+    }).catch( (err) => {
+      console.log('err', err)
+    })
   }
 
   render() {
@@ -68,4 +74,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default Signup
